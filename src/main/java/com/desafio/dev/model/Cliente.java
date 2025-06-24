@@ -53,7 +53,9 @@ public class Cliente {
      * Campo opcional que deve seguir o formato (xx)xxxxx-xxxx ou (xx)xxxx-xxxx.
      */
     @Column(nullable = true)
-    @Pattern(regexp = "^\\(\\d{2}\\)\\d{4,5}-\\d{4}$", message = "O telefone deve estar no formato (xx)xxxxx-xxxx ou (xx)xxxx-xxxx")
+    @Pattern.List({
+        @Pattern(regexp = "^$|^\\(\\d{2}\\)\\d{4,5}-\\d{4}$", message = "O telefone deve estar no formato (xx)xxxxx-xxxx ou (xx)xxxx-xxxx")
+    })
     private String telefone;
 
     /**

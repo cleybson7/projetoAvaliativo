@@ -2,6 +2,8 @@ package com.desafio.dev.service.interfaces;
 
 import com.desafio.dev.dtos.cliente.ClienteRequestDTO;
 import com.desafio.dev.dtos.cliente.ClienteResponseDTO;
+import com.desafio.dev.exceptions.ClienteAlreadyExistsException;
+import com.desafio.dev.exceptions.ClienteNotFoundException;
 
 import java.util.List;
 

@@ -1,8 +1,10 @@
 package com.desafio.dev.repository;
 
 import com.desafio.dev.ENUMS.Situacao;
+import com.desafio.dev.model.Cliente;
 import com.desafio.dev.model.Conta;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,13 +15,12 @@ import java.util.List;
  * e adiciona métodos personalizados para consultas específicas relacionadas
  * a contas, incluindo filtros por cliente e situação.
  */
+@Repository
 public interface ContaRepository extends JpaRepository<Conta, Long> {
-    /**
-     * Busca todas as contas de um cliente específico que estejam em determinadas situações.
-     * 
-     * @param id ID do cliente para buscar as contas
-     * @param situacoes Lista de situações para filtrar as contas
-     * @return Lista de contas que atendem aos critérios de busca
-     */
     List<Conta> findAllByClienteIdAndSituacaoIn(Long id, List<Situacao> situacoes);
+    //Usados para teste
+    List<Conta> findBySituacao(Situacao situacao);
+    List<Conta> findByCliente(Cliente cliente);
+    List<Conta> findByReferencia(String referencia);
+    List<Conta> findByClienteAndSituacao(Cliente clienteSalvo, Situacao situacao);
 }

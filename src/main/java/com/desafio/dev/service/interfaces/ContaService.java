@@ -2,6 +2,10 @@ package com.desafio.dev.service.interfaces;
 
 import com.desafio.dev.dtos.conta.ContaRequestDTO;
 import com.desafio.dev.dtos.conta.ContaResponseDTO;
+import com.desafio.dev.exceptions.SituacaoCanceladaNotAvailableException;
+import com.desafio.dev.exceptions.SituacaoNotAvailableException;
+import com.desafio.dev.exceptions.ContaEmptyException;
+import com.desafio.dev.exceptions.ContaNotFoundException;
 
 import java.util.List;
 
@@ -19,7 +23,7 @@ public interface ContaService {
      * @param id ID do cliente ao qual a conta será associada
      * @param contaRequestDTO DTO contendo os dados da conta a ser criada
      * @return DTO com os dados da conta criada, incluindo seu ID
-     * @throws ClienteNotFoundException se o cliente não for encontrado
+     * @throws com.desafio.dev.exceptions.ClienteNotFoundException se o cliente não for encontrado
      * @throws SituacaoCanceladaNotAvailableException se tentar criar uma conta com situação CANCELADA
      * @throws SituacaoNotAvailableException se a situação informada não for válida para criação
      */

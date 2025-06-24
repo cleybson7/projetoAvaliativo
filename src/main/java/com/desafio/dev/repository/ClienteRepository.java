@@ -4,6 +4,7 @@ import com.desafio.dev.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -15,11 +16,7 @@ import java.util.Optional;
  */
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-    /**
-     * Busca um cliente pelo seu CPF.
-     * 
-     * @param cpf CPF do cliente a ser buscado
-     * @return Optional contendo o cliente se encontrado, ou vazio se não existir
-     */
     Optional<Cliente> findByCpf(String cpf);
+    //usados para teste
+    boolean existsByCpf(String s);
 }
