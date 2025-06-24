@@ -43,6 +43,8 @@ src/
 │       └── 📄 application.properties
 └── test/
     └── java/
+        ├──repository_test
+        ├──validations_test
         └── 🧪 DevApplicationTests.java
 ```
 
@@ -64,14 +66,7 @@ classDiagram
         -Situacao situacao
         -Cliente cliente
     }
-    class Situacao {
-        <<enumeration>>
-        PENDENTE
-        PAGA
-        CANCELADA
-    }
     Cliente "1" -- "*" Conta : possui
-    Conta -- Situacao : possui
 ```
 
 ## 🔌 Endpoints Disponíveis
@@ -96,7 +91,7 @@ classDiagram
 3. **Executando o Projeto**
    ```bash
    # Clone o repositório
-   git clone [url-do-repositorio]
+   git clone https://github.com/cleybson7/projetoAvaliativo.git
 
    # Entre na pasta do projeto
    cd dev
