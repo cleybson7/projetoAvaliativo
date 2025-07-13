@@ -77,6 +77,12 @@ classDiagram
 - **PUT** `/clientes/{id}` - Atualizar cliente
 - **DELETE** `/clientes/{id}` - Excluir cliente
 
+### Contas
+- **POST** `/clientes/{idCliente}/contas` - Criar uma nova conta para determinado cliente
+- **GET** - `/clientes/{idCliente}/contas` - Listar todas as contas de um determinado cliente
+- **PUT** - `/contas/{idConta}` - Atualizar a conta de um determinado cliente
+- **DELETE** - `/contas/{idConta}` - Excluir a conta de um determinado cliente
+
 ## 🚀 Como Usar
 
 1. **Pré-requisitos**
